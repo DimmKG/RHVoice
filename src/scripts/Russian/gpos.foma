@@ -51,7 +51,9 @@ define Preposition
 за | 
 засчёт | 
 из | 
-"из-за" | 
+"из-за" |
+"изъ-за" |
+"изъ-под" |
 "из-под" | 
 изо | 
 к | 
@@ -299,7 +301,10 @@ define Possessive
 
 define FunctionWord Conjunction | Preposition | Particle | Relative | Personal | Possessive;
 
+define RemoveLastHardSign ъ @-> 0 || _ .#. ;
+
 regex 
+RemoveLastHardSign .o.
 Conjunction -> conj || _ ,, 
 Preposition -> prep || _ ,, 
 Particle -> part || _ ,, 

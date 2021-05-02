@@ -301,8 +301,10 @@ namespace RHVoice
     if(rulex_dict_fst.get()==0)
       return false;
     const std::string& name=word.get("name").as<std::string>();
+    std::vector<std::string> modern_word;
+    to_modern_fst.translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(modern_word));
     std::vector<std::string> stressed;
-    if(rulex_dict_fst->translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(stressed)))
+    if(rulex_dict_fst->translate(modern_word.begin(),modern_word.end(),std::back_inserter(stressed)))
       {
         g2p_fst.translate(stressed.begin(),stressed.end(),std::back_inserter(transcription));
         return true;
@@ -311,7 +313,7 @@ namespace RHVoice
       {
         if(rulex_rules_fst.get()==0)
           return false;
-        if(rulex_rules_fst->translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(stressed)))
+        if(rulex_dict_fst->translate(modern_word.begin(),modern_word.end(),std::back_inserter(stressed)))
           {
             g2p_fst.translate(stressed.begin(),stressed.end(),std::back_inserter(transcription));
             return true;
