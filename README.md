@@ -1,3 +1,5 @@
+This is the [RHVoice](https://github.com/RHVoice/RHVoice) fork with minimal support of pre-reform russian orthography.
+
 # RHVoice
 
 RHVoice is a free and open source speech synthesizer.
