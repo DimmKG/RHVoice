@@ -3,3 +3,4 @@ local/
 *.pyc
 /src/include/core/config.h
 /CMakeLists.txt.user
+.vscode/*
