@@ -1,4 +1,4 @@
-This is the [RHVoice](https://github.com/RHVoice/RHVoice) fork with minimal support of pre-reform russian orthography.
+This is the [RHVoice](https://github.com/RHVoice/RHVoice) fork with minimal support for pre-reform russian orthography.
 
 # RHVoice
 
