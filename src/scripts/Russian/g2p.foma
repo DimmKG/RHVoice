@@ -92,17 +92,19 @@ define ApplyOrthoepicRules
 define SoftConsonant bb | vv | gg | dd | zz | j | kk | ll | mm | nn | pp | rr | ss | tt | ff | hh | ch | sch;
 define HardConsonant b | v | g | d | zh | z | k | l | m | n | p | r | s | t | f | h | c | sh;
 
-define YVowelLetter е | Е | ё | Ё | ю | Ю | я | Я;
+define YVowelLetter е | Е | ё | Ё | ю | Ю | я | Я  | ѣ | Ѣ;
 define VowelLetter а | А | и | И | о | О | у | У | ы | Ы | э | Э | YVowelLetter;
 
-define TranscribeI и:i0 | И:i1;
-define TranscribeYVowel е:e0 | Е:e1 | ё:o1 | Ё:o1 | ю:u0 | Ю:u1 | я:a0 | Я:a1;
+define TranscribeI и:i0 | И:i1 | і:i0 | І:i1 | ѵ:i0 | Ѵ:i1;
+define TranscribeYVowel е:e0 | Е:e1 | ё:o1 | Ё:o1 | ю:u0 | Ю:u1 | ѣ:e0 | Ѣ:e1 | я:a0 | Я:a1;
 define TranscribeHardVowel а:a0 | А:a1 | о:o0 | О:o1 | у:u0 | У:u1 | ы:y0 | Ы:y1 | э:e0 | Э:e1;
 define TranscribeVowel TranscribeHardVowel | TranscribeI | TranscribeYVowel;
 
-define TranscribeAsHardConsonant б:b | в:v | г:g | д:d | ж:zh | з:z | й:j | к:k | л:l | м:m | н:n | п:p | р:r | с:s | т:t | ф:f | х:h | ц:c | ч:ch | ш:sh | щ:sch;
+define TranscribeAsHardConsonant б:b | в:v | г:g | д:d | ж:zh | з:z | й:j | к:k | л:l | м:m | н:n | п:p | р:r | с:s | т:t | ф:f | х:h | ц:c | ч:ch | ш:sh | щ:sch | ѳ:f;
 
-define TranscribeAsSoftConsonant б:bb | в:vv | г:gg | д:dd | ж:zh | з:zz | й:j | к:kk | л:ll | м:mm | н:nn | п:pp | р:rr | с:ss | т:tt | ф:ff | х:hh | ц:c | ч:ch | ш:sh | щ:sch;
+define TranscribeAsSoftConsonant б:bb | в:vv | г:gg | д:dd | ж:zh | з:zz | й:j | к:kk | л:ll | м:mm | н:nn | п:pp | р:rr | с:ss | т:tt | ф:ff | х:hh | ц:c | ч:ch | ш:sh | щ:sch | ѳ:ff;
+
+define RemoveLastHardSign ъ @-> 0 || _ .#. ;
 
 define Transcribe 
 TranscribeAsSoftConsonant ь:0 @-> || _ ,, 
@@ -124,6 +126,7 @@ source stress_in_text.foma
 
 regex 
 [[%- | WrittenStressMark] -> 0] .o. 
-ApplyOrthoepicRules .o. 
-Transcribe .o. 
-ChangeItoYAfterHardConsonants ; 
+RemoveLastHardSign .o.
+ApplyOrthoepicRules .o.
+Transcribe .o.
+ChangeItoYAfterHardConsonants ;

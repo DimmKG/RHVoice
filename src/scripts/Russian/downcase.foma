@@ -26,7 +26,8 @@ define RussianDowncase
 [Ё : ё] | 
 [Ж : ж] | 
 [З : з] | 
-[И : и] | 
+[И : и] |
+[І : і] |
 [Й : й] | 
 [К : к] | 
 [Л : л] | 
@@ -46,10 +47,13 @@ define RussianDowncase
 [Щ : щ] | 
 [Ь : ь] | 
 [Ы : ы] | 
-[Ъ : ъ] | 
+[Ъ : ъ] |
+[Ѣ : ѣ] |
 [Э : э] | 
 [Ю : ю] | 
-[Я : я] ; 
+[Я : я] |
+[Ѳ : ѳ] |
+[Ѵ : ѵ];
 
 regex 
 [RussianDowncase | EnglishDowncase] -> ; 

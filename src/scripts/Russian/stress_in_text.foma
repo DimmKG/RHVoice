@@ -18,7 +18,7 @@ clear
 
 define WrittenStressMark "́" ; 
 
-define WrittenSmallStressedVowel [а|е|ё|и|о|у|ы|э|ю|я] WrittenStressMark ; 
+define WrittenSmallStressedVowel [а|е|ё|и|і|о|у|ы|ѣ|э|ю|я|ѵ] WrittenStressMark ;
 
 define WrittenCapitalStressedVowel [WrittenSmallStressedVowel .o. [RussianDowncase.i ?]].l ; 
 

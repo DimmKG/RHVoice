@@ -36,8 +36,8 @@ namespace RHVoice
       }
     };
 
-
-    utf8::uint32_t russian_vowel_letters[20]={1025,1040,1045,1048,1054,1059,1067,1069,1070,1071,1072,1077,1080,1086,1091,1099,1101,1102,1103,1105};
+    //
+    utf8::uint32_t russian_vowel_letters[26]={1025,1040,1045,1048,1054,1059,1067,1069,1070,1071,1072,1077,1080,1086,1091,1099,1101,1102,1103,1105,1030,1110,1122,1123,1140,1141};
   }
 
   russian_info::russian_info(const std::string& data_path,const std::string& userdict_path):
@@ -49,7 +49,16 @@ namespace RHVoice
     register_letter_range(0x410,32);
     register_letter(0x451);
     register_letter(0x401);
-    for(std::size_t i=0;i<20;++i)
+    //Pre-reform alphabet
+    register_letter(0x406); //І
+    register_letter(0x456); //і
+    register_letter(0x462); //Ѣ
+    register_letter(0x463); //ѣ
+    register_letter(0x472); //Ѳ
+    register_letter(0x473); //ѳ
+    register_letter(0x474); //Ѵ
+    register_letter(0x475); //ѵ
+    for(std::size_t i=0;i<26;++i)
       register_vowel_letter(russian_vowel_letters[i]);
   }
 
