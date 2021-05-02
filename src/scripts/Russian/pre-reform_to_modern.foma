@@ -1,0 +1,11 @@
+define ReplaceOldLetters 
+і -> и || _ ,, 
+ѣ -> е || _ ,, 
+ѳ -> ф || _ ,, 
+ѵ -> и || _ ;
+
+define RemoveLastHardSign ъ @-> 0 || _ .#. ;
+
+regex 
+ReplaceOldLetters .o. 
+RemoveLastHardSign ;

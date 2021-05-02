@@ -78,6 +78,7 @@ namespace RHVoice
     split_fst(path::join(info_.get_data_path(),"split.fst")),
     dict_fst(path::join(info_.get_data_path(),"dict.fst")),
     stress_fst(path::join(info_.get_data_path(),"stress.fst")),
+    to_modern_fst(path::join(info_.get_data_path(),"pre-reform_to_modern.fst")),
     stress_rules(path::join(info_.get_data_path(),"stress.fsm"),io::integer_reader<uint8_t>())
   {
     try
@@ -229,7 +230,9 @@ namespace RHVoice
   bool russian::transcribe_word_from_dict(const item& word,std::vector<std::string>& transcription) const
   {
     const std::string& name=word.get("name").as<std::string>();
-    if(dict_fst.translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(transcription)))
+    std::vector<std::string> modern_word;
+    to_modern_fst.translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(modern_word));
+    if(dict_fst.translate(modern_word.begin(),modern_word.end(),std::back_inserter(transcription)))
       return true;
     else
       return false;
@@ -258,8 +261,10 @@ namespace RHVoice
   bool russian::transcribe_word_from_stress_dict(const item& word,std::vector<std::string>& transcription) const
   {
     const std::string& name=word.get("name").as<std::string>();
+    std::vector<std::string> modern_word;
+    to_modern_fst.translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(modern_word));
     std::vector<std::string> stressed;
-    if(stress_fst.translate(str::utf8_string_begin(name),str::utf8_string_end(name),std::back_inserter(stressed)))
+    if(stress_fst.translate(modern_word.begin(),modern_word.end(),std::back_inserter(stressed)))
       {
         g2p_fst.translate(stressed.begin(),stressed.end(),std::back_inserter(transcription));
         return true;
