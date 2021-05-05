@@ -126,7 +126,7 @@ source stress_in_text.foma
 
 regex 
 [[%- | WrittenStressMark] -> 0] .o. 
-RemoveLastHardSign .o.
-ApplyOrthoepicRules .o.
-Transcribe .o.
+RemoveLastHardSign .o. 
+ApplyOrthoepicRules .o. 
+Transcribe .o. 
 ChangeItoYAfterHardConsonants ;

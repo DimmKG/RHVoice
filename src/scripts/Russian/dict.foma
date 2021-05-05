@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-define Dict 
+define ModernDict 
 {чтоб} : [sh t o1 b] | 
 {чтобы} : [sh t o1 b y0] | 
 {по-моему} : [p a0 m o1 j i0 m u0] | 
@@ -58,4 +58,12 @@ define Dict
 {приведено} : [p rr i0 vv i0 dd i0 n o1] | 
 {ничего} : [nn i0 ch i0 v o1] ; 
 
-regex Dict;
+define OldDict 
+{іена} : [j e0 n a0] | 
+{іодъ} : [j o1 d] | 
+{іегова} : [j e0 g o0 v a0];
+
+source pre-reform_to_modern.foma
+clear
+
+regex OldDict | [Translate .o. ModernDict];

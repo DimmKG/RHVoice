@@ -35,9 +35,10 @@ define AltQuestionTagger
 q -> altq || или ?+ %= _ .#. ; 
 
 define Tagger 
+RemoveLastHardSign .o. 
 DefaultTagger .o. 
 AltQuestionTagger .o. 
 WhQuestionTagger .o. 
-ElQuestionTagger ; 
+ElQuestionTagger; 
 
 regex Tagger ; 

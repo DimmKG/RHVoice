@@ -52,9 +52,9 @@ define Preposition
 засчёт | 
 из | 
 "из-за" |
+"из-под" | 
 "изъ-за" |
 "изъ-под" |
-"из-под" | 
 изо | 
 к | 
 ко | 
@@ -166,6 +166,7 @@ define Relative
 которому | 
 которую | 
 которые | 
+которыя | 
 который | 
 которым | 
 которыми | 
@@ -185,7 +186,6 @@ define Relative
 чьему | 
 чьи | 
 чьим | 
-чьим | 
 чьими | 
 чьих | 
 чью | 
@@ -204,6 +204,7 @@ define Personal
 ему | 
 ею | 
 её | 
+ея | 
 им | 
 ими | 
 их | 
@@ -238,7 +239,7 @@ define Personal
 define Possessive 
 ваш | 
 ваша | 
-ваше  |  
+ваше |  
 вашего | 
 вашей | 
 вашем | 
@@ -299,9 +300,9 @@ define Possessive
 твоё | 
 твоём;
 
-define FunctionWord Conjunction | Preposition | Particle | Relative | Personal | Possessive;
+define RemoveLastHardSign ъ @-> 0 || _ [%-|.#.] ;
 
-define RemoveLastHardSign ъ @-> 0 || _ .#. ;
+define FunctionWord Conjunction | Preposition | Particle | Relative | Personal | Possessive;
 
 regex 
 RemoveLastHardSign .o.

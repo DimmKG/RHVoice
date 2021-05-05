@@ -19,8 +19,7 @@ define ReplaceOldLetters
 ѳ -> ф || _ ,, 
 ѵ -> и || _ ;
 
-define RemoveLastHardSign ъ @-> 0 || _ .#. ;
+define RemoveLastHardSign ъ @-> 0 || _ [%-|.#.] ;
 
-regex 
-ReplaceOldLetters .o. 
-RemoveLastHardSign ;
+define Translate RemoveLastHardSign .o. ReplaceOldLetters;
+regex Translate;
