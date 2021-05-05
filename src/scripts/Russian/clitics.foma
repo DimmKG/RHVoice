@@ -27,6 +27,8 @@ define Proclitic
 из | 
 "из-за" |  
 "из-под" | 
+"изъ-за" |  
+"из-подъ" | 
 изо | 
 к | 
 лишь | 
@@ -77,12 +79,12 @@ define Enclitic
 define Clitic Proclitic | Enclitic;
 
 define NeNiExceptions 
-[не|ни] [был|было|были];
+[не|ни] [был *ъ|было|были];
 
 regex 
 NeNiExceptions @-> host en || _ ,, 
 потому что @-> host en || _ ,, 
 то есть @-> host en || _ ,, 
-Proclitic @-> pro || _ ,, 
-Enclitic @-> en || _ ,, 
-\Clitic @-> host || _ ; 
+Proclitic ъ* @-> pro || _ ,, 
+Enclitic ъ* @-> en || _ ,, 
+\[Clitic ъ*] @-> host || _ ; 

@@ -54,7 +54,7 @@ define Preposition
 "из-за" |
 "из-под" | 
 "изъ-за" |
-"изъ-под" |
+"изъ-подъ" |
 изо | 
 к | 
 ко | 
@@ -300,16 +300,14 @@ define Possessive
 твоё | 
 твоём;
 
-define RemoveLastHardSign ъ @-> 0 || _ [%-|.#.] ;
 
 define FunctionWord Conjunction | Preposition | Particle | Relative | Personal | Possessive;
 
 regex 
-RemoveLastHardSign .o.
-Conjunction -> conj || _ ,, 
-Preposition -> prep || _ ,, 
-Particle -> part || _ ,, 
-Relative -> rel || _ ,, 
-Personal -> pers || _ ,, 
-Possessive -> pos || _ ,, 
-\FunctionWord -> content || _ ; 
+Conjunction ъ* @-> conj || _ ,, 
+Preposition ъ* @-> prep || _ ,, 
+Particle ъ* @-> part || _ ,, 
+Relative ъ* @-> rel || _ ,, 
+Personal ъ* @-> pers || _ ,, 
+Possessive ъ* @-> pos ||  _ ,, 
+\[FunctionWord ъ*] @-> content ||  _  ; 

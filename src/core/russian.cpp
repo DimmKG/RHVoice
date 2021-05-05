@@ -79,7 +79,6 @@ namespace RHVoice
     dict_fst(path::join(info_.get_data_path(),"dict.fst")),
     stress_fst(path::join(info_.get_data_path(),"stress.fst")),
     to_modern_fst(path::join(info_.get_data_path(),"pre-reform_to_modern.fst")),
-    remove_hsign(path::join(info_.get_data_path(),"remove_hsign.fst")),
     stress_rules(path::join(info_.get_data_path(),"stress.fsm"),io::integer_reader<uint8_t>())
   {
     try
@@ -139,9 +138,7 @@ namespace RHVoice
     relation& phrase_rel=u.get_relation("Phrase");
     for(relation::iterator phrase_iter(phrase_rel.begin());phrase_iter!=phrase_rel.end();++phrase_iter)
       {
-        std::vector<std::string> without_hsign;
-        remove_hsign.translate(phrase_iter->begin(),phrase_iter->end(),std::back_inserter(without_hsign));
-        clit_fst.translate(without_hsign.begin(),without_hsign.end(),set_feature_iterator<std::string>("clitic",phrase_iter->begin(),phrase_iter->end()));
+        clit_fst.translate(phrase_iter->begin(),phrase_iter->end(),set_feature_iterator<std::string>("clitic",phrase_iter->begin(),phrase_iter->end()));
         for(item::iterator word_iter(phrase_iter->begin());word_iter!=phrase_iter->end();++word_iter)
           {
             if(word_iter->has_feature("lseq"))

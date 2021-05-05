@@ -20,7 +20,7 @@ define WhInitialConjunction
 а | но | и | [да (и)] | [ну (а | и)] | ато | только | то ; 
 
 define StartOfWhQuestion 
-(WhInitialConjunction) (Preposition) Relative ; 
+(WhInitialConjunction) (Preposition ъ*) Relative *ъ ; 
 
 define DefaultTagger 
 [..] -> %= q || _ .#. ; 
@@ -29,13 +29,12 @@ define WhQuestionTagger
 q -> whq || [.#.|%-] StartOfWhQuestion ?+ %= _ .#. ; 
 
 define ElQuestionTagger 
-q -> elq || .#. а (Preposition) ? %= _ .#. ; 
+q -> elq || .#. а (Preposition ъ*) ? %= _ .#. ; 
 
 define AltQuestionTagger 
 q -> altq || или ?+ %= _ .#. ; 
 
 define Tagger 
-RemoveLastHardSign .o. 
 DefaultTagger .o. 
 AltQuestionTagger .o. 
 WhQuestionTagger .o. 
