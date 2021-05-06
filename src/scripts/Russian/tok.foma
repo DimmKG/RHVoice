@@ -94,6 +94,8 @@ define Letter
 а|А|б|Б|в|В|г|Г|д|Д|е|Е|ё|Ё|ж|Ж|з|З|и|И|і|І|й|Й|к|К|л|Л|м|М|н|Н|о|О|п|П|р|Р|с|С|т|Т|у|У|ф|Ф|х|Х|ц|Ц|ч|Ч|ш|Ш|щ|Щ|ь|Ь|ы|Ы|ъ|Ъ|ѣ|Ѣ|э|Э|ю|Ю|я|Я|ѳ|Ѳ|ѵ|Ѵ |
 a|A|b|B|c|C|d|D|e|E|f|F|g|G|h|H|i|I|j|J|k|K|l|L|m|M|n|N|o|O|p|P|q|Q|r|R|s|S|t|T|u|U|v|V|w|W|x|X|y|Y|z|Z;
 
+define SingleOldCharacters і|І|ѣ|Ѣ|ѳ|Ѳ|ѵ|Ѵ;
+
 define NZDigit 1|2|3|4|5|6|7|8|9;
 define Digit %0|NZDigit;
 
@@ -125,7 +127,8 @@ Word @-> ... word || _ .#. | \Letter ,,
 \[Letter | Digit] @-> ... sym || _ ; 
 
 define Stage2 
-word -> lseq || [.#.|word|num|sym] LetterSequence _ ,, 
+word -> lseq || [.#.|sym|word|num] SingleOldCharacters _ ,, 
+word -> lseq || [.#.|word|num|sym] LetterSequence  _ ,, 
 num -> dig || Digit^15 _ ,, 
 sym -> 0 || [.#.|sym] PlusOrMinus _ Digit ; 
 
