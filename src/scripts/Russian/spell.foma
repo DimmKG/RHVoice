@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Copyright (C) 2012, 2020  Olga Yakovleva <yakovleva.o.v@gmail.com>
 
 # This program is free software: you can redistribute it and/or modify
@@ -255,5 +254,4 @@ define Symbol
 %~:тильда ; 
 
 regex 
-RussianLetter | EnglishLetter | Digit | Whitespace | Punctuation | Symbol ; 
->>>>>>> 2807d084cada2826a508cbd4874064541e37aa76
+RussianLetter | EnglishLetter | Digit | Whitespace | Punctuation | Symbol ;
