@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'master'
@@ -8,7 +9,6 @@ on:
   pull_request:
     branches:
       - 'master'
-
 jobs:
   androidBuild:
     defaults:
