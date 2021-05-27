@@ -1,6 +1,6 @@
 This is the [RHVoice](https://github.com/RHVoice/RHVoice) fork with minimal support for pre-reform russian orthography.
 
-Binaries for Windows and NVDA: [Link](https://drive.google.com/drive/folders/1iPQdY0AP_yRN9u8cajWWoXMWHXPWDStf)
+Binaries for Windows and NVDA: [Link](doc/ru/Binaries.md)
 
 # RHVoice
 
