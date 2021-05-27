@@ -12,14 +12,14 @@
 ### Голоса
 
 * [Aleksandr](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Aleksandr-4.2.7.nvda-addon), версия 4.2.7
-* [Anna](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Anna-4.1.7.nvda-addon), версия 4.1.6
+* [Anna](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Anna-4.1.7.nvda-addon), версия 4.1.7
 * [Evgeniy-rus](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Evgeniy-Rus-4.0.7.nvda-addon), версия 4.0.7
 * [Artemiy](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Artemiy-4.0.7.nvda-addon), версия 4.0.7
 * [Victoria](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Victoria-4.0.7.nvda-addon), версия 4.0.7
 * [Arina](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Arina-4.0.7.nvda-addon), версия 4.0.7
 * [Pavel](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Pavel-4.0.7.nvda-addon), версия 4.0.7
-* [Elena](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Elena-4.2.7.nvda-addon), версия 4.2.6
-* [Irina](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Irina-4.1.7.nvda-addon), версия 4.1.6
+* [Elena](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Elena-4.2.7.nvda-addon), версия 4.2.7
+* [Irina](https://github.com/DimmKG/RHVoice/releases/download/1.2.4-rpr/RHVoice-voice-Russian-Irina-4.1.7.nvda-addon), версия 4.1.7
 
 ## SAPI 5
 
